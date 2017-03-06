@@ -1,0 +1,148 @@
+################################################################
+##
+## Title       : top_xc3s500e_heart.ucf
+## Design      : VGA
+## Author      : Kapitanov
+## Company     : ...
+## 
+## Version     : 1.1
+##
+################################################################
+##
+## Description:
+##
+## THIS IS THE UCF FOR MAIN PROJECT BASED ON XILINX SPARTAN3E KIT
+##
+## Device: Spartan3E: XC3S500E-FG320-4
+##
+##					LED Matrix 8x8
+##
+################################################################
+
+###################################################
+############### I/O PORTS CONSTRAINTS ############# 
+###################################################
+
+## BUTTONS = ## K1-K5
+NET "KB[5]" LOC = P54;
+NET "KB[4]" LOC = P58;
+NET "KB[3]" LOC = P57;
+NET "KB[2]" LOC = P159;
+NET "KB[1]" LOC = P154;
+
+NET "KB[5]" IOSTANDARD = LVTTL;
+NET "KB[4]" IOSTANDARD = LVTTL;
+NET "KB[3]" IOSTANDARD = LVTTL;
+NET "KB[2]" IOSTANDARD = LVTTL;
+NET "KB[1]" IOSTANDARD = LVTTL;
+
+## LEDS = ## LED_MATRIX
+NET "LED_X[7]" LOC = P49;
+NET "LED_X[7]" IOSTANDARD = LVTTL;
+NET "LED_X[7]" DRIVE = 8;
+NET "LED_X[7]" SLEW = SLOW;
+NET "LED_X[6]" LOC = P48;
+NET "LED_X[6]" IOSTANDARD = LVTTL;
+NET "LED_X[6]" DRIVE = 8;
+NET "LED_X[6]" SLEW = SLOW;
+NET "LED_X[5]" LOC = P40;
+NET "LED_X[5]" IOSTANDARD = LVTTL;
+NET "LED_X[5]" DRIVE = 8;
+NET "LED_X[5]" SLEW = SLOW;
+NET "LED_X[4]" LOC = P50;
+NET "LED_X[4]" IOSTANDARD = LVTTL;
+NET "LED_X[4]" DRIVE = 8;
+NET "LED_X[4]" SLEW = SLOW;
+NET "LED_X[3]" LOC = P62;
+NET "LED_X[3]" IOSTANDARD = LVTTL;
+NET "LED_X[3]" DRIVE = 8;
+NET "LED_X[3]" SLEW = SLOW;
+NET "LED_X[2]" LOC = P98;
+NET "LED_X[2]" IOSTANDARD = LVTTL;
+NET "LED_X[2]" DRIVE = 8;
+NET "LED_X[2]" SLEW = SLOW;
+NET "LED_X[1]" LOC = P64;
+NET "LED_X[1]" IOSTANDARD = LVTTL;
+NET "LED_X[1]" DRIVE = 8;
+NET "LED_X[1]" SLEW = SLOW;
+NET "LED_X[0]" LOC = P63;
+NET "LED_X[0]" IOSTANDARD = LVTTL;
+NET "LED_X[0]" DRIVE = 8;
+NET "LED_X[0]" SLEW = SLOW;
+
+NET "LED_Y[7]" LOC = P75;
+NET "LED_Y[7]" IOSTANDARD = LVTTL;
+NET "LED_Y[7]" DRIVE = 8;
+NET "LED_Y[7]" SLEW = SLOW;
+NET "LED_Y[6]" LOC = P78;
+NET "LED_Y[6]" IOSTANDARD = LVTTL;
+NET "LED_Y[6]" DRIVE = 8;
+NET "LED_Y[6]" SLEW = SLOW;
+NET "LED_Y[5]" LOC = P76;
+NET "LED_Y[5]" IOSTANDARD = LVTTL;
+NET "LED_Y[5]" DRIVE = 8;
+NET "LED_Y[5]" SLEW = SLOW;
+NET "LED_Y[4]" LOC = P69;
+NET "LED_Y[4]" IOSTANDARD = LVTTL;
+NET "LED_Y[4]" DRIVE = 8;
+NET "LED_Y[4]" SLEW = SLOW;
+NET "LED_Y[3]" LOC = P74;
+NET "LED_Y[3]" IOSTANDARD = LVTTL;
+NET "LED_Y[3]" DRIVE = 8;
+NET "LED_Y[3]" SLEW = SLOW;
+NET "LED_Y[2]" LOC = P65;
+NET "LED_Y[2]" IOSTANDARD = LVTTL;
+NET "LED_Y[2]" DRIVE = 8;
+NET "LED_Y[2]" SLEW = SLOW;
+NET "LED_Y[1]" LOC = P68;
+NET "LED_Y[1]" IOSTANDARD = LVTTL;
+NET "LED_Y[1]" DRIVE = 8;
+NET "LED_Y[1]" SLEW = SLOW;
+NET "LED_Y[0]" LOC = P77;
+NET "LED_Y[0]" IOSTANDARD = LVTTL;
+NET "LED_Y[0]" DRIVE = 8;
+NET "LED_Y[0]" SLEW = SLOW;
+
+## Switches
+NET "RESET" LOC = P148;
+NET "RESET" IOSTANDARD = LVTTL;
+
+NET "SW[1]"	    LOC = P142;
+NET "SW[2]"		LOC = "P136";
+NET "SW[3]"		LOC = "P130";
+NET "SW[4]"		LOC = "P124"; 
+NET "SW[5]"		LOC = "P118"; 
+NET "SW[6]"		LOC = "P110";
+NET "SW[7]"		LOC = "P43";
+
+NET "SW[1]"		IOSTANDARD = LVTTL;	    
+NET "SW[2]"		IOSTANDARD = LVTTL;
+NET "SW[3]"		IOSTANDARD = LVTTL;
+NET "SW[4]"		IOSTANDARD = LVTTL; 
+NET "SW[5]"		IOSTANDARD = LVTTL; 
+NET "SW[6]"		IOSTANDARD = LVTTL;
+NET "SW[7]"		IOSTANDARD = LVTTL;
+
+## BELL (tie to GND)
+NET "BELL" LOC = P89;
+NET "BELL" IOSTANDARD = LVTTL;
+NET "BELL" DRIVE = 8;
+NET "BELL" SLEW = FAST;
+ 
+## CLK 50 MHz
+NET "CLK" IOSTANDARD = LVCMOS33;
+NET "CLK" LOC = P183;
+###################################################
+################ CLOCK CONSTRAINTS ################# 
+###################################################
+
+# Define clock period for 50 MHz oscillator
+#NET "CLK" PERIOD = 20.0ns HIGH 50%;
+
+NET "clk_in" TNM_NET = "CLK_TN";
+TIMESPEC TS_CLK = PERIOD "CLK_TN" 20 ns HIGH 50 %;
+
+# PlanAhead Generated physical constraints 
+
+
+
